@@ -1,5 +1,5 @@
 html {
-	background: #404550;
+	background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
 }
 
 body {
@@ -8,8 +8,8 @@ body {
 	position: relative;
 	background: #fff;
 	color: rgb(76, 67, 65);
-	font-weight:normal;
-	font-style:normal;
+	font-weight:bold;
+	font-style:bold;
 
     width: 1280px;
 	margin: 20 auto;
@@ -18,21 +18,25 @@ body {
 
 
 form, div{
-	border-bottom: 2px solid rgb(76, 67, 65);
+	/* border-bottom: 2px solid rgb(76, 67, 65); */
 	margin-bottom: 5em;
     margin-left: auto;
     margin-right: auto;
-    width: 50em
+    width: 50em;
 }
 
 h1 {
 	font-family: Georgia, Times, "Times New Roman", serif;
 	font-size: 1.8em;
-	border-bottom: 2px solid rgb(76, 67, 65);
+	border-bottom: 2px solid rgb(222, 62, 26);
 	margin-bottom: 1.5em;
 	background: url(../_images/icon_sprites_50.png) no-repeat
 }
-
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .example_a {
     border: none;
     background: #404040;
@@ -41,10 +45,12 @@ h1 {
     padding: 20px;
     text-transform: uppercase;
     border-radius: 6px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: all 0.3s ease 0s;
 
-    float: right;
+    /* float: right; */
     margin-top: 2em;
 }
 
