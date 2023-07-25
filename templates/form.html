@@ -5,7 +5,7 @@
     table,
     th,
     td {
-      border: 1px solid rgb(231, 20, 20);
+      border: 2px solid rgb(76, 67, 65);
     }
   </style>
   <title>{{ title }} Sentiment Analysis</title>
@@ -13,50 +13,60 @@
 </head>
 
 <body>
-  <h1 style="display: flex; justify-content: center; align-items: center;">FeelScan - Sentiment Detection</h1>
- 
+  <h1 style="display: flex; justify-content: center; align-items: center; color: black;">FeelScan - Sentiment Detection</h1>
+
   <form method="POST">
     <textarea name="text1" placeholder="Type your text here...." rows="10" cols="109" style="border-radius: 5px; outline: 5px solid rgb(76, 67, 65);
     "></textarea><br><br>
     <div class="btn">
 
-      <button class="example_a" type="submit">Check Analysis</button> 
+      <button class="example_a" type="submit">Check Analysis</button>
     </div>
-    
+
   </form>
   {% if final %}
   <div>
-    <h2>The Sentiment of</h2> '{{ text1 }}' <h2>is {{ final *100}}% positive !</h2>
-    <h2>Score table</h2>
+    <div
+      style="display: flex; justify-content: center; gap: 16px; align-items: center; font-style: italic;  font-family: 'Times New Roman', Times, serif;">
+
+      <h2 style="display:flex ;">The Sentiment of </h2>
+      <p style="font-size: 30px; font-weight: 600; color: black;">'{{ text1 }}' </p>
+      <h2 style="font-weight: bold; font-weight: bold;">is {{ final *100}}% positive !</h2>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;  ">
+
+      <h2 style="font-size: 4rem; font-weight: bolder; font-family: 'Times New Roman', Times, serif; border-bottom: 4px double black; color: black;">Score table</h2>
+    </div>
 
 
+    <div style="display: flex; padding: 2px; margin: 2px; ">
+      <table style="width:100%; margin: 2px; padding: 4px; font-size: 30px;  color: black;" >
+        <tr style=" display: flexbox; padding-bottom: 4px; margin-bottom: 4px;">
+          <th>SENTIMENT METRIC</th>
+          <th>SCORE</th>
+        </tr>
+        <tr style=" display: flexbox;">
+          <td style=" padding: 4px; font-weight: 600;">Positive</td>
+          <td style="padding-left: 8px;">{{text2}}</td>
 
-    <table style="width:100%">
-      <tr>
-        <th>SENTIMENT METRIC</th>
-        <th>SCORE</th>
-      </tr>
-      <tr>
-        <td>Positive</td>
-        <td>{{text2}}</td>
+        </tr>
+        <tr>
+          <td  style=" padding: 4px; font-weight: 600;">Neutral</td>
+          <td style="padding-left: 8px;">{{text3}}</td>
 
-      </tr>
-      <tr>
-        <td>Neutral</td>
-        <td>{{text3}}</td>
+        </tr>
+        <tr>
+          <td  style=" padding: 4px; font-weight: 600;">Negative</td>
+          <td style="padding-left: 8px;">{{text5}}</td>
 
-      </tr>
-      <tr>
-        <td>Negative</td>
-        <td>{{text5}}</td>
+        </tr>
+        <tr>
+          <td  style=" padding: 4px; font-weight: 600;">Compound</td>
+          <td style="padding-left: 8px;">{{text4}}</td>
 
-      </tr>
-      <tr>
-        <td>Compound</td>
-        <td>{{text4}}</td>
-
-      </tr>
-    </table>
+        </tr>
+      </table>
+    </div>
     {% else %}
     <p></p>
     {% endif %}
